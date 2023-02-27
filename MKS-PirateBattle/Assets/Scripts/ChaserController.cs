@@ -18,11 +18,11 @@ public class ChaserController : MonoBehaviour
     {
         if(player == null) return;
 
+        /*
         Vector3 targetDir = boat.agent.nextPosition - transform.position;
         float angleForward = Vector3.Angle(targetDir, transform.forward);
         float angleRight = Vector3.Angle(targetDir, transform.right);
 
-        /*
         if (angleForward > 20f)
         {
             if(angleRight < 90)
