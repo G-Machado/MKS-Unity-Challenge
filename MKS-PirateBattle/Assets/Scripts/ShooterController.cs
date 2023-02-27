@@ -15,6 +15,7 @@ public class ShooterController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(GameloopManager.instance.currentState != GameloopManager.GameState.PLAY) return;
         if(player == null) return;
 
         if(Vector3.Distance(player.transform.position, boat.transform.position) > shootingRange)

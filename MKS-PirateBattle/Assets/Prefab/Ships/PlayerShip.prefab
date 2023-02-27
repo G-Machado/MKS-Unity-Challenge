@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4297329335329737614}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &4297329334908146936
 SpriteRenderer:
@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 4297329335329737615}
   - component: {fileID: 4297329335329737613}
   - component: {fileID: 4297329335329737609}
+  - component: {fileID: 4317707417755391947}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -113,9 +114,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4297329335708066518}
+  - {fileID: 4297329334908146939}
   - {fileID: 4297329335775236950}
   - {fileID: 4297329336584123703}
-  - {fileID: 4297329334908146939}
+  - {fileID: 840862238675951587}
+  - {fileID: 7630399704995841026}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -155,10 +158,14 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3287365735933237734, guid: 1a19e73d22a447c4a9dc69696dc321c3,
     type: 3}
   bulletForwardPoint: {fileID: 4297329335708066518}
-  bulletSidePoints:
+  bulletSidePointsRight:
   - {fileID: 4297329335775236950}
   - {fileID: 4297329336584123703}
-  bulletCD: 1
+  bulletSidePointsLeft:
+  - {fileID: 840862238675951587}
+  - {fileID: 7630399704995841026}
+  bulletCD: 0.5
+  bulletSpeed: 4
   life: 10
   OnDeath:
     m_PersistentCalls:
@@ -198,6 +205,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 4297329335329737615}
+--- !u!65 &4317707417755391947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297329335329737608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39, y: 0, z: 0.72}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4297329335708066513
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,11 +272,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4297329335775236945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.349, y: 0, z: 0.056}
+  m_LocalPosition: {x: 0.377, y: 0, z: 0.056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4297329335329737614}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4297329336584123702
 GameObject:
@@ -282,9 +302,69 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4297329336584123702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.362, y: 0, z: -0.196}
+  m_LocalPosition: {x: 0.39, y: 0, z: -0.196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4297329335329737614}
-  m_RootOrder: 2
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5383609144183940505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7630399704995841026}
+  m_Layer: 0
+  m_Name: sideBulletPoint (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7630399704995841026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5383609144183940505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.395, y: 0, z: -0.196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4297329335329737614}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6065197402053043010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 840862238675951587}
+  m_Layer: 0
+  m_Name: sideBulletPoint (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &840862238675951587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6065197402053043010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.408, y: 0, z: 0.056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4297329335329737614}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

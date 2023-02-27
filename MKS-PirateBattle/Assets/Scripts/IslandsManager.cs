@@ -7,8 +7,7 @@ public class IslandsManager : MonoBehaviour
 {
     public GameObject[] islandGroups;
 
-    // Start is called before the first frame update
-    void Start()
+    public void SpawnRandomGroup()
     {
         SpawnGroup(Random.Range(0, islandGroups.Length));
     }

@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 4852921689065907903}
   - component: {fileID: 4852921689065907872}
   - component: {fileID: 4852921689065907873}
+  - component: {fileID: -1010076338010701676}
   m_Layer: 0
   m_Name: ChaserShip
   m_TagString: Untagged
@@ -238,18 +239,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4852921689065907902}
-  moveSpeed: 5
+  moveSpeed: 6
   waterDamp: 0.1
   agent: {fileID: 4852921689065907872}
   rotSpeed: 5
   bulletPrefab: {fileID: 3287365735933237734, guid: 1a19e73d22a447c4a9dc69696dc321c3,
     type: 3}
   bulletForwardPoint: {fileID: 4852921687506194374}
-  bulletSidePoints:
-  - {fileID: 4852921687888397808}
-  - {fileID: 4852921687957349303}
+  bulletSidePointsRight: []
+  bulletSidePointsLeft: []
   bulletCD: 1
-  life: 10
+  bulletSpeed: 4
+  life: 3
+  maxLife: 3
+  lifeSliderPrefab: {fileID: 6319949519421380043, guid: f4c1d818fece1b54c9a8add7d4157d76,
+    type: 3}
+  lifeSlider: {fileID: 0}
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -288,3 +293,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 4852921689065907903}
+--- !u!65 &-1010076338010701676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852921689065907874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39, y: 0, z: 0.72}
+  m_Center: {x: 0, y: 0, z: 0}

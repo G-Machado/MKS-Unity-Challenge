@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 314823177516011465}
   - component: {fileID: 314823177516011478}
   - component: {fileID: 314823177516011479}
+  - component: {fileID: 6977077042944315450}
   m_Layer: 0
   m_Name: ShooterShip
   m_TagString: Untagged
@@ -74,11 +75,15 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3287365735933237734, guid: 1a19e73d22a447c4a9dc69696dc321c3,
     type: 3}
   bulletForwardPoint: {fileID: 314823178942785200}
-  bulletSidePoints:
-  - {fileID: 314823178474597510}
-  - {fileID: 314823178542484161}
+  bulletSidePointsRight: []
+  bulletSidePointsLeft: []
   bulletCD: 2
-  life: 10
+  bulletSpeed: 4
+  life: 2
+  maxLife: 2
+  lifeSliderPrefab: {fileID: 6319949519421380043, guid: f4c1d818fece1b54c9a8add7d4157d76,
+    type: 3}
+  lifeSlider: {fileID: 0}
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -118,6 +123,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boat: {fileID: 314823177516011465}
   shootingRange: 3
+--- !u!65 &6977077042944315450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314823177516011476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39, y: 0, z: 0.72}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &314823178474597511
 GameObject:
   m_ObjectHideFlags: 0
