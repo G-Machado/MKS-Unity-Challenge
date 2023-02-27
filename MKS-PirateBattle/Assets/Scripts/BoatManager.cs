@@ -30,8 +30,6 @@ public class BoatManager : MonoBehaviour
     public UnityEvent OnDeath;
 
     private void Start() {
-        moveVector = transform.forward * moveSpeed;
-
         // Nav mesh agent configuration
         agent.updateRotation = false;
     }
@@ -40,24 +38,17 @@ public class BoatManager : MonoBehaviour
         
         // Damps the rotation by simulating water damp
         rotVector *= (1 - waterDamp);
-        Rotate(Input.GetAxis("Horizontal"));
 
         // Damps the speed by simulating water damp
-        float inputForward = Input.GetAxis("Vertical");
-        if(inputForward > .1f)
-            moveVector = transform.forward * moveSpeed * .1f * inputForward;
         agent.speed = moveSpeed *.1f;
         moveVector *= (1 - waterDamp);
 
-        //rb.velocity = Vector3.Lerp(rb.velocity, moveVector, .2f);
+        // Apply movement 
         agent.SetDestination(transform.position + moveVector);
+
+        // Apply rotation
         Quaternion deltaRotation = Quaternion.Euler(rotVector * Time.fixedDeltaTime);
         rb.MoveRotation(rb.rotation * deltaRotation);
-
-        if(Input.GetKeyDown(KeyCode.Space))
-            ShootForward();
-        if(Input.GetKeyDown(KeyCode.Tab))
-            ShootSideways();
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -69,9 +60,10 @@ public class BoatManager : MonoBehaviour
         }
     }
 
-    public void MoveForward() 
+    public void MoveForward(float input) 
     {
-        moveVector = transform.up * moveSpeed;
+        if(input > .1f)
+            moveVector = transform.forward * moveSpeed * .1f * Mathf.Clamp(input, 0, 1);
     }
 
     public void Rotate(float input)
